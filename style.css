@@ -1,0 +1,433 @@
+* {
+  margin: 0;
+  padding: 0;
+  color: rgb(0, 0, 0);
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color:#f5f5f5;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  padding: 1rem 6%;
+  background-color:#f5f5f5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  transition: .3s;
+  border-bottom: 2px solid #ededed;
+  font-family: "Work Sans", sans-serif;
+  box-shadow: 0 0.2rem .6rem rgba(0, 0, 0, 0.2);
+}
+
+header .logo {
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+  user-select: none;
+}
+
+header .navbar {
+  position: absolute;
+  top: 100%;
+  left: -105%;
+  width: 100%;
+  padding: 1.5rem 6%;
+  background-color: #2b939c;
+  z-index: 1;
+  transition: .25s ease;
+  transition-delay: .25s;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  box-shadow: 0 0.1rem .3rem rgba(0, 0, 0, 0.2);
+}
+
+header .navbar.active {
+  left: 0;
+  transition-delay: 0s;
+}
+
+header .navbar .active-nav {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: #f5f5f5;
+  z-index: -1;
+  transition: .25s ease;
+  transition-delay: 0;
+}
+
+header .navbar.active .active-nav {
+  left: 0;
+  transition-delay: .25s;
+}
+
+header .navbar li{
+  list-style-type: none;
+}
+
+header .navbar li a {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 500;
+  transition: .2s;
+  padding: .3rem;
+}
+
+header .navbar li a:hover,
+header .navbar li a.active {
+  color: #2b939c;
+  font-weight: bold;
+}
+
+header #hamburgerButton {
+  cursor: pointer;
+  font-size: 1.6rem;
+  background-color: transparent;
+  transition: .3s;
+}
+
+header #hamburgerButton:hover {
+  color: #2b939c;
+}
+
+section {
+  font-family: "Work Sans", sans-serif;
+  min-height: calc(100vh - 68px);
+  padding: 3rem 6%;
+}
+
+.headers {
+  text-align: center;
+}
+
+.headers h3 {
+  font-size: 1.5rem;
+}
+
+.headers h2 {
+  font-size: 1.8rem;
+  color: #2b939c;
+}
+
+section:nth-child(even) {
+  background-color: #fff;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3.5rem;
+}
+
+.home .profile {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.home .profile .description {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  text-align: center;
+}
+
+.home .profile .description h3 {
+  color: #2b939c;
+  font-size: 1.4rem;
+}
+
+.home .profile .description h2 {
+  font-size: 1.8rem;
+}
+
+.home .profile .description h2 span {
+  color: #2b939c;
+}
+
+.home .profile .description p {
+  font-size: 1.3rem;
+}
+
+.home .profile aside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home .profile aside img {
+  width: 90%;
+}
+
+.home .social-media {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.home .social-media a i {
+  font-size: 2.3rem;
+  transition: .3s;
+}
+
+.home .social-media a:hover span, 
+.home .social-media a:hover i {
+  color: #2b939c;
+}
+
+.home .social-media a p span {
+  display: none;
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  gap: 2.3rem;
+}
+
+.project .projects-container .project-item {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.project .projects-container .project-item img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  height: 200px;
+}
+
+.project .projects-container .project-item h4 {
+  position: absolute;
+  left: 25px;
+  top: 25px;
+  color: #f5f5f5;
+  font-size: 1.7rem;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.about .about-container {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 1.8rem;
+  justify-content: center;
+}
+
+.about .about-container article {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.about .about-container article h2 {
+  font-size: 2.3rem;
+}
+
+.about .about-container article h2 span {
+  color: #2b939c;
+}
+
+.about .about-container article p {
+  font-size: 1.3rem;
+}
+
+.about .about-container article p span {
+  background-color: #2b939c44;
+  padding: 5px;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+.about .about-container aside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.about .about-container aside img {
+  width: 90%;
+}
+
+footer {
+  font-family: "Work Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem 6%;
+  background-color: #2b939c;
+}
+
+footer p {
+  font-weight: 600;
+  color: #f5f5f5;
+  font-size: 1.1rem;
+}
+
+footer .social-media {
+  display: flex;
+  gap: .7rem;
+}
+
+footer .social-media a i {
+  font-size: 1.6rem;
+  color: #f5f5f5;
+}
+
+@media screen and (min-width: 600px) {
+  .home .profile {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .home .profile .description {
+    text-align: start;
+    flex: 1.5;
+  }
+
+  .home .profile aside {
+    flex: 1;
+  }
+
+  .home .social-media {
+    flex-wrap: nowrap;
+  }
+
+  .home .social-media a p {
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+  }
+
+  .home .social-media a p span {
+    display: inline;
+    transition: .3s;
+  }
+
+  .project .projects-container {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .project .projects-container .project-item {
+    flex: 1;
+    margin-bottom: 1rem;
+  }
+
+  .project .projects-container .project-item h4 {
+    font-size: 1.2rem;
+  }
+
+  .project .projects-container > .project-item img {
+    height: 100%;
+  }
+
+  .project .projects-container aside {
+    flex: 1.7;
+  }
+
+  .about .about-container {
+    flex-direction: row-reverse;
+  }
+
+  .about .about-container article h2 {
+    font-size: 1.5rem;
+  }
+
+  .about .about-container article p {
+    font-size: 1rem;
+  }
+
+  .about .about-container article {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 820px) {
+  header {
+    padding: 1rem 10%;
+  }
+  header .navbar {
+    position: static;
+    flex-direction: row;
+    padding: 0;
+    width: fit-content;
+    background-color: transparent;
+    gap: 8px;
+    box-shadow: none;
+  }
+
+  header .navbar .active-nav {
+    display: none;
+  }
+ 
+  header .navbar li a {
+    font-size: 1.2rem;
+    padding: .6rem .8rem;
+  }
+
+  header .navbar li a:hover,
+  header .navbar li a.active {
+    border-bottom: 3px solid #2b939c;
+  }
+
+  header #hamburgerButton {
+    display: none;
+  }
+ 
+  section {
+    padding: 2rem 10%;
+  }
+
+
+  .home .profile .description h3 {
+    font-size: 1.6rem;
+  }
+
+  .home .profile .description h2 {
+    font-size: 2rem;
+  }
+
+  .home .profile .description p {
+    font-size: 1.6rem;
+  }
+
+  .about .about-container article {
+    width: 70%;
+  }
+
+  .about .about-container article h2 {
+    font-size: 2rem;
+  }
+
+  .about .about-container article p {
+    font-size: 1.1rem;
+  }
+  
+  footer {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
